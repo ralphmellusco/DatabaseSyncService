@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using DatabaseSyncService.Configuration;
 using DatabaseSyncService.Utilities;
+using DatabaseSyncService.Core;
+using DatabaseSyncService.Models;
 
 namespace DatabaseSyncService
 {
@@ -160,7 +162,7 @@ namespace DatabaseSyncService
                 _eventLogger.LogInfo($"Starting sync job: {job.JobName}");
                 _fileLogger.LogInfo($"Starting sync job: {job.JobName}");
                 
-                var synchronizer = new TableSynchronizer();
+                var synchronizer = new EnhancedTableSynchronizer();
                 var result = synchronizer.Synchronize(job);
                 
                 job.LastRun = DateTime.Now;

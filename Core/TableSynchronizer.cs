@@ -6,6 +6,10 @@ using System.Linq;
 
 namespace DatabaseSyncService
 {
+    /// <summary>
+    /// DEPRECATED: This class is deprecated and should not be used for production scenarios.
+    /// Use EnhancedTableSynchronizer instead which implements proper change tracking and bulk operations.
+    /// </summary>
     public class TableSynchronizer
     {
         public SyncResult Synchronize(SyncJob job)
